@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import CreateMeme from "./Components/CreateMeme"
 import MemeCarousel from "./Components/MemeCarousel"
 import Nav from "./Components/Nav"
-import Hero from "./Components/Hero"
+import Hero from "./Components/Home"
 
 function App() {
     return (
