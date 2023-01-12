@@ -22,17 +22,25 @@ const CreateMeme = (props) => {
         }
     }
 
+    //UPDATE MEME
     const updateMeme = async (e) =>{
         e.preventDefault();
         try{
-            
+            const options = {
+                method: "PUT", 
+                headers: {"Conent-Type": "application/json"},
+                body: JSON.stringify(editForm)
+            }
+            const response = await fetch()
+            const updatedMeme = await response.json()
+            setMeme(updatedMeme)
         }catch(err){
             console.error(err)
         }
     }
 
     
-
+    //USEEFFECT
     useEffect(() => {
 
     }, [])
