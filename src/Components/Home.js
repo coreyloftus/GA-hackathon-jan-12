@@ -1,6 +1,6 @@
 //HOME PAGE
 import "../Styling/Components.css"
-const Hero = (props) => {
+const Home = (props) => {
     return (
         <div>
             <h2>Group 2's Meme Generator</h2>
@@ -8,4 +8,4 @@ const Hero = (props) => {
     )
 }
 
-export default Hero
+export default Home
