@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom"
 import CreateMeme from "./Components/CreateMeme"
 import MemeCarousel from "./Components/MemeCarousel"
 import Nav from "./Components/Nav"
-import Hero from "./Components/Home"
+import Home from "./Components/Home"
 import { UserContext } from "./data"
 import { useState } from "react"
 import Auth from "./Components/Auth"
@@ -27,7 +27,7 @@ function App() {
                     <MemeCarousel />
                 </div>
                 <Routes>
-                    <Route path="/" element={<Hero />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/meme/:id" element={<CreateMeme />} />
                     <Route path="/auth" element={<Auth />} />
                 </Routes>

@@ -55,65 +55,95 @@ const CreateMeme = (props) => {
             console.error(err)
         }
     }
-    
-    //LOADED FUNCTION 
+
+    // //LOADED FUNCTION 
+    // const loaded = () => {
+    //     return (
+    //         <div className="clickedMemeDiv">
+    //             <section className="clickedMemeSection">
+    //                 <div>
+    //                     <img src="https://img.icons8.com/ios-filled/512/user-male-circle.png" />
+    //                     <div>
+    //                         <h2 className="showUser">{meme.user}</h2>
+    //                         <img
+    //                             className="deleteMemeIcon"
+    //                             src="https://img.icons8.com/ios/512/delete-sign.png"
+    //                             alt="delete"
+    //                             onClick={deleteMeme}
+    //                         />
+    //                     </div>
+    //                 </div>
+    //                 <h2>{meme.content}</h2>
+    //                 <img
+    //                     className="memeImage"
+    //                     src={meme.image}
+    //                     alt={meme.image}
+    //                     width={400}
+    //                 />
+    //             </section>
+
+    //             <div>
+    //                 <form onSubmit={updateMeme} >
+    //                     {/* CONTENT INPUT  */}
+    //                     <input
+    //                         name="content"
+    //                         className="commentName commentInput"
+    //                         type="text"
+    //                         value={editForm.content}
+    //                         placeholder=""
+    //                         onChange={handleChange}
+    //                     />
+    //                     {/* IMAGE INPUT  */}
+    //                     <input
+    //                         name="image"
+    //                         className="commentName commentInput"
+    //                         type="text"
+    //                         value={editForm.image}
+    //                         placeholder=""
+    //                         onChange={handleChange}
+    //                     />
+    //                     {/* USER INPUT */}
+    //                     <input
+    //                         name="user"
+    //                         className="commentName commentInput"
+    //                         type="text"
+    //                         value={editForm.user}
+    //                         placeholder=""
+    //                         onChange={handleChange}
+    //                     />
+    //                 </form>
+    //             </div>
+    //         </div>
+    //     )
+    // }
+
     const loaded = () => {
         return (
-            <div className="clickedMemeDiv">
+            <>
                 <section className="clickedMemeSection">
                     <div>
-                        <img src="https://img.icons8.com/ios-filled/512/user-male-circle.png" />
-                        <div>
-                            <h2 className="showUser">{meme.user}</h2>
-                            <img
-                                className="deleteMemeIcon"
-                                src="https://img.icons8.com/ios/512/delete-sign.png"
-                                alt="delete"
-                                onClick={deleteMeme}
-                            />
-                        </div>
+                        <h2 className="showUser">{meme.user}</h2>
+                        <h2>{meme.content}</h2>
+                        <img
+                            className="memeImage"
+                            src={meme.image}
+                            alt={meme.image}
+                            width={400}
+                        />
                     </div>
-                    <h2>{meme.content}</h2>
-                    <img
-                        className="tweetImage"
-                        src={meme.image}
-                        alt={meme.image}
-                        width={400}
-                    />
                 </section>
-
-                <div>
-                    <form onSubmit={updateMeme} >
-                        {/* CONTENT INPUT  */}
+                <div className="inputMemeText">
+                    <form className="formClass" onSubmit={updateMeme}>
                         <input
-                            name="content"
-                            className="commentName commentInput"
                             type="text"
                             value={editForm.content}
                             placeholder=""
                             onChange={handleChange}
                         />
-                        {/* IMAGE INPUT  */}
-                        <input
-                            name="image"
-                            className="commentName commentInput"
-                            type="text"
-                            value={editForm.image}
-                            placeholder=""
-                            onChange={handleChange}
-                        />
-                        {/* USER INPUT */}
-                        <input
-                            name="user"
-                            className="commentName commentInput"
-                            type="text"
-                            value={editForm.user}
-                            placeholder=""
-                            onChange={handleChange}
-                        />
                     </form>
-                </div>
-            </div>
+
+                </div >
+            </>
         )
     }
 
@@ -125,6 +155,7 @@ const CreateMeme = (props) => {
                     Loading...
                     <span>
                         <img
+                            width="200"
                             className="spinner"
                             src="https://freesvg.org/img/1544764567.png"
                         />
@@ -141,7 +172,7 @@ const CreateMeme = (props) => {
 
     return (
         <div>
-            { true ? loaded() : loading() }
+            {meme ? loaded() : loading()}
         </div>
     )
 }
