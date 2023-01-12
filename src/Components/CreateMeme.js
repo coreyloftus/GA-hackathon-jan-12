@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom"
 import "../Styling/Components.css"
 
 const CreateMeme = (props) => {
-    const [meme, setMeme] = useState();
+    const [meme, setMeme] = useState("");
+    const [editForm, setEditForm] = useState([])
     const { id } = useParams()
 
     useEffect(() => {
