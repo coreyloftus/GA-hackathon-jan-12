@@ -75,7 +75,8 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin:1rem;
 }
 .memeImage img{
     width: 40vw;

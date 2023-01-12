@@ -157,11 +157,13 @@ const CreateMeme = (props) => {
                     <div className="inputMemeForm">
                         <div className="inputMemeTextTop">
                             <form className="formClass" onSubmit={updateMeme}>
+                                <p>top text</p>
                                 <input type="text" id="content" name="toptext" value={editForm.toptext} placeholder="write your meme" onChange={handleChange} />
                             </form>
                         </div>
                         <div className="inputMemeTextBottom">
                             <form className="formClass" onSubmit={updateMeme}>
+                                <p>bottom text</p>
                                 <input type="text" id="content" name="bottomtext" value={editForm.bottomtext} placeholder="write your meme" onChange={handleChange} />
                             </form>
                         </div>
