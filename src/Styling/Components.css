@@ -10,16 +10,24 @@
     margin:.6rem;
     justify-content: space-between;
 }
-.Navbar-Top img{
-    width:4rem;
-}
 .Navbar-Top nav{
     display:flex;
     margin: 1.2rem;
+    align-items: center;
 }
 .Navbar-Top a{
+    color:black;
+    border-radius:1rem;
     padding:1rem;
     text-decoration: none;
+}
+.Navbar-Top a:hover {
+    background-color: #dbdbdb;
+    /* color:#BB2649; */
+    transition: ease-in-out .2s;
+}
+.Navbar-Top img{
+    width:4rem;
 }
 .Register {
     padding:1.2rem;
@@ -55,15 +63,23 @@
     width:80vw;
 }
 .displayMemeText {
-    width:30vw;
+    width:40vw;
     height:10vh;
+    font-size: .8rem;
     display:flex;
     align-items: center;
     justify-content: center;
     background-color: white;
 }
+.inputMemeForm {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 .memeImage img{
-    width: 30vw;
+    width: 40vw;
+    margin-bottom:-4px;
 }
 .loading img {
     width:4rem;
