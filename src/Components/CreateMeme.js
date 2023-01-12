@@ -144,17 +144,29 @@ const CreateMeme = (props) => {
                         {/* <h2 className="showUser">username goes here</h2> */}
                         <div>
                             <div className="displayMemeText">
-                                <h2>{editForm.content}</h2>
+                                <h2>{editForm.toptext}</h2>
                             </div>
                             <div className="memeImage">
                                 <img src={keanu} alt="keanu-what-if" />
                             </div>
+                            <div className="displayMemeText">
+                                <h2>{editForm.bottomtext}</h2>
+                            </div>
                         </div>
                     </section>
-                    <div className="inputMemeText">
-                        <form className="formClass" onSubmit={updateMeme}>
-                            <input type="text" id="content" name="content" value={editForm.content} placeholder="write your meme" onChange={handleChange} />
-                        </form>
+                    <div className="inputMemeForm">
+                        <div className="inputMemeTextTop">
+                            <form className="formClass" onSubmit={updateMeme}>
+                                <p>top text</p>
+                                <input type="text" id="content" name="toptext" value={editForm.toptext} placeholder="write your meme" onChange={handleChange} />
+                            </form>
+                        </div>
+                        <div className="inputMemeTextBottom">
+                            <form className="formClass" onSubmit={updateMeme}>
+                                <p>bottom text</p>
+                                <input type="text" id="content" name="bottomtext" value={editForm.bottomtext} placeholder="write your meme" onChange={handleChange} />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </>
