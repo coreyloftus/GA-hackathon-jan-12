@@ -5,19 +5,38 @@
     width:95vw;
     margin: 0 auto;
 }
-.Navbar-Top p{
+.Navbar-Top {
     display:flex;
     justify-content: center;
     margin:.6rem;
 }
+.Navbar-Top nav{
+    display:flex;
+    margin: 1.2rem;
+}
 .Register {
-    border: 2px solid red;
+    padding:1.2rem;
+    margin:.2rem;
 }
 .RegisterForm {
+    margin:.2rem;
     display:flex;
-    flex-direction: column;
-
+    justify-content: center;
+}
+.RegisterForm input {
+    display: flex;
+    margin:1.2rem;
 }
 .Login {
-    border: 2px solid red;
+    padding:1.2rem;
+    margin:.2rem;
+}
+.LoginForm {
+    display: flex;
+    justify-content: center;
+    margin:1.2rem;
+}
+.LoginForm input {
+    display: flex;
+    margin:1.2rem;
 }
