@@ -10,7 +10,7 @@ const CreateMeme = (props) => {
     const [editForm, setEditForm] = useState([])
     const { id } = useParams()
 
-    //GET MEME
+    //GET MEME - MEME/:ID
     const getMeme = async () => {
         try{
             const response = await fetch()
@@ -21,6 +21,17 @@ const CreateMeme = (props) => {
             console.error(err);
         }
     }
+
+    const updateMeme = async (e) =>{
+        e.preventDefault();
+        try{
+            
+        }catch(err){
+            console.error(err)
+        }
+    }
+
+    
 
     useEffect(() => {
 
