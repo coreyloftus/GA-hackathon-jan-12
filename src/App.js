@@ -7,13 +7,13 @@ import Nav from "./Components/Nav"
 import Hero from "./Components/Home"
 import { UserContext } from "./data"
 import { useState } from "react"
+import Auth from "./Components/Auth"
 
 function App() {
     const { Provider: UserInfo } = UserContext
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [currentUser, setCurrentUser] = useState(null)
     return (
-
         <UserInfo
             value={{
                 isAuthenticated,
@@ -21,18 +21,19 @@ function App() {
                 user: currentUser,
                 setUser: setCurrentUser,
             }}>
-        <div className="App">
-            <div> 
-            <Nav />
-            <Hero />
-            <MemeCarousel />
+            <div className="App">
+                <div>
+                    <Nav />
+                    <Hero />
+                    <MemeCarousel />
+                </div>
+                <Routes>
+                    <Route path="/" element={<Hero />} />
+                    <Route path="/meme/:id" element={<CreateMeme />} />
+                    <Route path="/auth" element={<Auth />} />
+                </Routes>
             </div>
-            <Routes>
-                <Route path="/" element={<Hero />} />
-                <Route path="/meme/:id" element={<CreateMeme />} />
-            </Routes>
-        </div>
-          </UserInfo>
+        </UserInfo>
     )
 }
 
