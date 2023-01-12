@@ -12,6 +12,9 @@ const Nav = (props) => {
                 <Link to="/auth">
                     <p>Login / Signup</p>
                 </Link>
+                <Link to="/meme/:id">
+                    <p>MEME SHOW PAGE</p>
+                </Link>
             </nav>
         </div>
     )
