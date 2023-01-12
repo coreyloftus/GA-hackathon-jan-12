@@ -141,7 +141,7 @@ const CreateMeme = (props) => {
 
     return (
         <div>
-            meme ? loaded() : loading()
+            { true ? loaded() : loading() }
         </div>
     )
 }
