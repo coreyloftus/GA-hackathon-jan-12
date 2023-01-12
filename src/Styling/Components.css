@@ -1,8 +1,14 @@
+.Index {
+    background-color: transparent;
+}
+.App {
+    width:95vw;
+    margin: 0 auto;
+}
 .Navbar-Top p{
     display:flex;
     justify-content: center;
     margin:.6rem;
-    /* border: 2px solid red; */
 }
 .Register {
     border: 2px solid red;
