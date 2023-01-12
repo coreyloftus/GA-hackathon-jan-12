@@ -13,9 +13,8 @@ const CreateMeme = (props) => {
 
     //HANDLE-CHANGE
     const handleChange = (e) => {
-        setEditForm({...editForm, [e.target.name]: e.target.value})
+        setEditForm({ ...editForm, [e.target.name]: e.target.value })
     }
-
 
     //GET MEME - MEME/:ID - NEEDS BACK END URL 
     const getMeme = async () => {
@@ -39,8 +38,8 @@ const CreateMeme = (props) => {
                 body: JSON.stringify(editForm)
             }
             const response = await fetch(options)
-            const updatedMeme = await response.json()
-            setMeme(updatedMeme)
+            const newMeme = await response.json()
+            setMeme(newMeme)
         } catch (err) {
             console.error(err)
         }
@@ -56,51 +55,93 @@ const CreateMeme = (props) => {
             console.error(err)
         }
     }
-
+    
+    //LOADED FUNCTION 
     const loaded = () => {
         return (
-            <div>
-                <input 
-                    name = "content"
-                    className="commentName commentInput"
-                    type="text"
-                    value={editForm.content}
-                    placeholder=""
-                    onChange={handleChange}
-                />
+            <div className="clickedMemeDiv">
+                <section className="clickedMemeSection">
+                    <div>
+                        <img src="https://img.icons8.com/ios-filled/512/user-male-circle.png" />
+                        <div>
+                            <h2 className="showUser">{meme.user}</h2>
+                            <img
+                                className="deleteMemeIcon"
+                                src="https://img.icons8.com/ios/512/delete-sign.png"
+                                alt="delete"
+                                onClick={deleteMeme}
+                            />
+                        </div>
+                    </div>
+                    <h2>{meme.content}</h2>
+                    <img
+                        className="tweetImage"
+                        src={meme.image}
+                        alt={meme.image}
+                        width={400}
+                    />
+                </section>
 
-                <input 
-                    name = "image"
-                    className="commentName commentInput"
-                    type="text"
-                    value={editForm.image}
-                    placeholder=""
-                    onChange={handleChange}
-                />
-
-                <input
-                    name = "user"
-                    className="commentName commentInput"
-                    type="text"
-                    value={editForm.user}
-                    placeholder=""
-                    onChange={handleChange}
-                />
-
-
-
+                <div>
+                    <form onSubmit={updateMeme} >
+                        {/* CONTENT INPUT  */}
+                        <input
+                            name="content"
+                            className="commentName commentInput"
+                            type="text"
+                            value={editForm.content}
+                            placeholder=""
+                            onChange={handleChange}
+                        />
+                        {/* IMAGE INPUT  */}
+                        <input
+                            name="image"
+                            className="commentName commentInput"
+                            type="text"
+                            value={editForm.image}
+                            placeholder=""
+                            onChange={handleChange}
+                        />
+                        {/* USER INPUT */}
+                        <input
+                            name="user"
+                            className="commentName commentInput"
+                            type="text"
+                            value={editForm.user}
+                            placeholder=""
+                            onChange={handleChange}
+                        />
+                    </form>
+                </div>
             </div>
         )
     }
 
+    //LOADING FUNCTION
+    const loading = () => {
+        return (
+            <section className="loading">
+                <h1>
+                    Loading...
+                    <span>
+                        <img
+                            className="spinner"
+                            src="https://freesvg.org/img/1544764567.png"
+                        />
+                    </span>
+                </h1>
+            </section>
+        );
+    };
 
     //USEEFFECT
     useEffect(() => {
         getMeme();
     }, [])
+
     return (
         <div>
-            <h2>Create Meme</h2>
+            meme ? loaded() : loading()
         </div>
     )
 }
