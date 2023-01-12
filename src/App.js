@@ -24,7 +24,7 @@ function App() {
             <div className="App">
                 <div>
                     <Nav />
-                    <MemeCarousel />
+                    {/* <MemeCarousel /> */}
                 </div>
                 <Routes>
                     <Route path="/" element={<Home />} />

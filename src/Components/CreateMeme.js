@@ -3,10 +3,11 @@ import React from "react"
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import "../Styling/Components.css"
+import keanu from "../Assets/keanu-what-if.png"
 
 //MEME COMPONENT
 const CreateMeme = (props) => {
-    const [meme, setMeme] = useState("");
+    const [meme, setMeme] = useState("")
     const [editForm, setEditForm] = useState([])
     const { id } = useParams()
     const navigate = useNavigate()
@@ -16,26 +17,26 @@ const CreateMeme = (props) => {
         setEditForm({ ...editForm, [e.target.name]: e.target.value })
     }
 
-    //GET MEME - MEME/:ID - NEEDS BACK END URL 
+    //GET MEME - MEME/:ID - NEEDS BACK END URL
     const getMeme = async () => {
         try {
             const response = await fetch()
-            const foundMeme = await response.json();
+            const foundMeme = await response.json()
             setMeme(foundMeme)
             setEditForm(foundMeme)
         } catch (err) {
-            console.error(err);
+            console.error(err)
         }
     }
 
     //UPDATE MEME - NEEDS BACK END URL IN FETCH
     const updateMeme = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
             const options = {
                 method: "PUT",
                 headers: { "Conent-Type": "application/json" },
-                body: JSON.stringify(editForm)
+                body: JSON.stringify(editForm),
             }
             const response = await fetch(options)
             const newMeme = await response.json()
@@ -48,7 +49,7 @@ const CreateMeme = (props) => {
     //DELETE ROUTE - NEEDS BACK END URL IN FETCH
     const deleteMeme = async (e) => {
         try {
-            const options = { method: "DELETE" };
+            const options = { method: "DELETE" }
             const response = await fetch(options)
             navigate("/")
         } catch (err) {
@@ -56,7 +57,7 @@ const CreateMeme = (props) => {
         }
     }
 
-    // //LOADED FUNCTION 
+    // //LOADED FUNCTION
     // const loaded = () => {
     //     return (
     //         <div className="clickedMemeDiv">
@@ -117,32 +118,45 @@ const CreateMeme = (props) => {
     //     )
     // }
 
+    // const loaded = () => {
+    //     return (
+    //         <>
+    //             <section className="clickedMemeSection">
+    //                 <div>
+    //                     <h2 className="showUser">{meme.user}</h2>
+    //                     <h2>{meme.content}</h2>
+    //                     <img className="memeImage" src={meme.image} alt={meme.image} width={400} />
+    //                 </div>
+    //             </section>
+    //             <div className="inputMemeText">
+    //                 <form className="formClass" onSubmit={updateMeme}>
+    //                     <input type="text" value={editForm.content} placeholder="" onChange={handleChange} />
+    //                 </form>
+    //             </div>
+    //         </>
+    //     )
+    // }
     const loaded = () => {
         return (
             <>
-                <section className="clickedMemeSection">
-                    <div>
-                        <h2 className="showUser">{meme.user}</h2>
-                        <h2>{meme.content}</h2>
-                        <img
-                            className="memeImage"
-                            src={meme.image}
-                            alt={meme.image}
-                            width={400}
-                        />
+                <div className="CreateMeme">
+                    <section className="clickedMemeSection">
+                        {/* <h2 className="showUser">username goes here</h2> */}
+                        <div>
+                            <div className="displayMemeText">
+                                <h2>{editForm.content}</h2>
+                            </div>
+                            <div className="memeImage">
+                                <img src={keanu} alt="keanu-what-if" />
+                            </div>
+                        </div>
+                    </section>
+                    <div className="inputMemeText">
+                        <form className="formClass" onSubmit={updateMeme}>
+                            <input type="text" id="content" name="content" value={editForm.content} placeholder="write your meme" onChange={handleChange} />
+                        </form>
                     </div>
-                </section>
-                <div className="inputMemeText">
-                    <form className="formClass" onSubmit={updateMeme}>
-                        <input
-                            type="text"
-                            value={editForm.content}
-                            placeholder=""
-                            onChange={handleChange}
-                        />
-                    </form>
-
-                </div >
+                </div>
             </>
         )
     }
@@ -154,27 +168,20 @@ const CreateMeme = (props) => {
                 <h1>
                     Loading...
                     <span>
-                        <img
-                            width="200"
-                            className="spinner"
-                            src="https://freesvg.org/img/1544764567.png"
-                        />
+                        <img className="spinner" src="https://freesvg.org/img/1544764567.png" />
                     </span>
                 </h1>
             </section>
-        );
-    };
+        )
+    }
 
     //USEEFFECT
     useEffect(() => {
-        getMeme();
-    }, [])
+        getMeme()
+    }, [editForm])
 
-    return (
-        <div>
-            {meme ? loaded() : loading()}
-        </div>
-    )
+    // return <div>{meme ? loaded() : loading()}</div>
+    return <div>{true ? loaded() : loading()}</div>
 }
 
 export default CreateMeme

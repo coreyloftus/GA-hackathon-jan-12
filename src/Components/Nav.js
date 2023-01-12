@@ -8,7 +8,6 @@ const Nav = (props) => {
         <div className="Navbar-Top">
             <Link to="/">
                 <img src={img} />
-                <p>Hackathon Memerator</p>
             </Link>
             <nav>
                 <Link to="/meme/:id">
