@@ -1,3 +1,17 @@
-* {
+.Navbar-Top p{
+    display:flex;
+    justify-content: center;
+    margin:.6rem;
+    /* border: 2px solid red; */
+}
+.Register {
+    border: 2px solid red;
+}
+.RegisterForm {
+    display:flex;
+    flex-direction: column;
+
+}
+.Login {
     border: 2px solid red;
 }
