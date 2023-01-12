@@ -1,12 +1,13 @@
 //SIDE BAR COMPONENT
 import "../Styling/Components.css"
+import img from "../Assets/me-gusta-face.png"
 import { Link } from "react-router-dom"
 
 const Nav = (props) => {
     return (
         <div className="Navbar-Top">
             <Link to="/">
-                <img src="src/Assets/me-gusta-face.png" />
+                <img src={img} />
                 <p>Hackathon Memerator</p>
             </Link>
             <nav>
