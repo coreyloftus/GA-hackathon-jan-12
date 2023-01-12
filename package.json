@@ -35,18 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "## Team",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/coreyloftus/GA-hackathon-jan-12.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/coreyloftus/GA-hackathon-jan-12/issues"
-  },
-  "homepage": "https://github.com/coreyloftus/GA-hackathon-jan-12#readme"
+  }
 }
