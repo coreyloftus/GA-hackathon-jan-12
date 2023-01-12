@@ -5,12 +5,9 @@
 }
 html {
   background: radial-gradient(circle at center,
-    #e1dfdf,
-     rgb(35, 139, 173)
-     /* #d2d2d2, */
-     /* #797878 */
+    #e1dfdf,rgb(35, 139, 173)
     );
-    /* background-size: 100%; */
+    background-size: 100%;
     animation: gradient 10s ease infinite;
 }
 h1 {
