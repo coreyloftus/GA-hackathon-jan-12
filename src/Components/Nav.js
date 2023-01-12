@@ -1,6 +1,7 @@
 //SIDE BAR COMPONENT
 import "../Styling/Components.css"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
+
 const Nav = (props) => {
     return (
         <div className="Navbar-Top">
