@@ -5,9 +5,10 @@ import { Link } from "react-router-dom"
 const Nav = (props) => {
     return (
         <div className="Navbar-Top">
-                <Link to="/">
-                    <p>Hackathon Memerator</p>
-                </Link>
+            <Link to="/">
+                <img src="src/Assets/me-gusta-face.png" />
+                <p>Hackathon Memerator</p>
+            </Link>
             <nav>
                 <Link to="/meme/:id">
                     <p>MEME SHOW PAGE</p>

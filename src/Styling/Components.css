@@ -7,8 +7,11 @@
 }
 .Navbar-Top {
     display:flex;
-    justify-content: space-between;
     margin:.6rem;
+    justify-content: space-between;
+}
+.Navbar-Top img{
+    width:1.2rem;
 }
 .Navbar-Top nav{
     display:flex;
