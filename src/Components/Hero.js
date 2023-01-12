@@ -1,3 +1,4 @@
+import "../Styling/Components.css"
 const Hero = (props) => {
 
     return (
